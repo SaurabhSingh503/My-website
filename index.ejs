@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saurabh Singh - Professional Website</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-info">
+                    <h1>Saurabh Singh</h1>
+                    <h2>Aspiring Web Developer | Data Analyst</h2>
+                    <p>Date of Birth: 3rd January 2006</p>
+                </div>
+                <div class="profile-image">
+                    <label for="upload-image" class="upload-label">Upload Your Profile Image</label>
+                    <form action="/upload-profile" method="POST" enctype="multipart/form-data">
+                        <input type="file" name="profilePic" class="upload-input" onchange="previewImage(event)">
+                        <button type="submit">Upload</button>
+                    </form>
+                    <img id="profile-pic-preview" src="/images/default-pic.jpg" alt="Profile Picture">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about-me">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Hi! I'm Saurabh Singh, an aspiring web developer and data analyst passionate about technology and innovation. I'm currently pursuing B.Tech in CSE at Kalinga Institute of Industrial Technology, Bhubaneswar.</p>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <ul>
+                <li><strong>Intermediate:</strong> Kendriya Vidyalaya Danapur Cantt</li>
+                <li><strong>B.Tech CSE:</strong> Kalinga Institute of Industrial Technology, Bhubaneswar (Class of 2028)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul>
+                <li>Web Development (HTML, CSS, JavaScript, React)</li>
+                <li>Backend Development (Node.js, Express)</li>
+                <li>Data Analysis (Python, Pandas, SQL)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <div class="container">
+            <h2>Certifications</h2>
+            <form action="/upload-certificate" method="POST" enctype="multipart/form-data">
+                <label for="certificates" class="upload-label">Upload Certification PDFs</label>
+                <input type="file" name="certificates" class="upload-input" multiple>
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <p>Upload your experiences or project-related documents:</p>
+            <form action="/upload-experience" method="POST" enctype="multipart/form-data">
+                <label for="experience" class="upload-label">Upload Experience</label>
+                <input type="file" name="experience" class="upload-input" multiple>
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="hobbies">
+        <div class="container">
+            <h2>Hobbies & Interests</h2>
+            <ul>
+                <li>Cricket</li>
+                <li>Football</li>
+                <li>Badminton</li>
+                <li>Singing</li>
+                <li>Dancing</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Information</h2>
+            <ul>
+                <li>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></li>
+                <li>LinkedIn: <a href="https://linkedin.com/in/saurabh-singh" target="_blank">Saurabh Singh</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Saurabh Singh. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Preview image upload
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const preview = document.getElementById('profile-pic-preview');
+                preview.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+</html>
